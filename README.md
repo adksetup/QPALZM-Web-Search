@@ -40,7 +40,7 @@ python main.py
 3. 代码使用 macOS 原生 `open` 命令唤起浏览器，仅适配苹果系统
 
 ## 项目信息
-项目名称：QPALZM Web Search
-工具系列：QPALZM Toolkit
-开发作者：AdkSetup
-支持平台：macOS
+- 项目名称：QPALZM Web Search
+- 工具系列：QPALZM Toolkit
+- 开发作者：AdkSetup
+- 支持平台：macOS
