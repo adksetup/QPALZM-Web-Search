@@ -1,4 +1,7 @@
 # QPALZM Web Search
+
+> [English Documentation](./README.en.md)
+
 macOS 专用简易网页搜索图形工具，基于 CustomTkinter 开发，一键调用百度、必应搜索，支持自定义网址直接打开。
 
 ## 功能特点
