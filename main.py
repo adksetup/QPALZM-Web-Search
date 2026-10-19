@@ -1,6 +1,18 @@
+import webbrowser
+
 from customtkinter import CTk, CTkButton, CTkLabel, CTkEntry
 from termcolor import cprint
-from subprocess import run
+
+
+def open_in_browser(url: str) -> None:
+    """Open a URL in the system default browser (macOS / Windows)."""
+    url = url.strip()
+    if not url:
+        return
+    if not url.startswith(('http://', 'https://')):
+        url = 'https://' + url
+    webbrowser.open(url)
+
 
 class QpalzmWebSearch:
     def __init__(self, window: CTk) -> None:
@@ -25,14 +37,18 @@ class QpalzmWebSearch:
     def ba_search_func(self):
         try:
             self.number = 1
-            run(f'open https://www.baidu.com/s?wd={self.search_entry.get()}&ie=utf-8', shell=True)
+            keyword = self.search_entry.get().strip()
+            if keyword:
+                open_in_browser(f'https://www.baidu.com/s?wd={keyword}&ie=utf-8')
         except Exception as e:
             cprint(f'ERROR: {e}', 'red')
 
     def bi_search_func(self):
         try:
             self.number = 2
-            run(f'open https://cn.bing.com/search?q={self.search_entry.get()}', shell=True)
+            keyword = self.search_entry.get().strip()
+            if keyword:
+                open_in_browser(f'https://cn.bing.com/search?q={keyword}')
         except Exception as e:
             cprint(f'ERROR: {e}', 'red')
 
@@ -56,9 +72,10 @@ class QpalzmWebSearch:
     def enter_url_n(self):
         try:
             self.number = 4
-            run(f'open {self.o_entry1.get()}', shell=True)
+            open_in_browser(self.o_entry1.get())
         except Exception as e:
             cprint(f'ERROR: {e}', 'red')
+
 
 if __name__ == '__main__':
     app = CTk()
