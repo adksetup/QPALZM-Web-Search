@@ -21,8 +21,10 @@ macOS 专用简易网页搜索图形工具，基于 CustomTkinter 开发，一�
 | 文件名称 | 适用平台 | 说明 |
 |--------|--------|------|
 | install_dependencies.sh | macOS | Mac 依赖安装脚本 |
-| WebSearch.dmg | macOS | Mac 标准安装包，拖拽至应用程序即可使用 |
-| WebSearch_Mac.zip | macOS | 绿色压缩包，解压后直接运行 |
+| InstallDependencies.bat | Windows | Windows 依赖安装脚本 |
+| WebSearch_Mac_v0.2.dmg | macOS | Mac 标准安装包，拖拽至应用程序即可使用 |
+| WebSearch_Mac_Portable_v0.2.zip | macOS | 绿色压缩包，解压后直接运行 |
+| WebSearch_Windows_v0.2.exe | Windows | 绿色程序，可直接双击运行 |
 ## 使用教程
 ### 方式一：运行编译好的程序包
 1. 进入仓库 Releases 页面，下载对应 macOS 程序文件
