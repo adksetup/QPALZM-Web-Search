@@ -8,6 +8,16 @@
 
 ---
 
+> **请从源码运行 / Please run from source**
+>
+> Releases 页面里的 v0.2 安装包尚未修复 Windows 下的「打开网页」功能（会调用 macOS 专用的 `open` 命令），请**不要下载使用**。
+>
+> 仓库源码已修复（改用跨平台的 `webbrowser` 模块），请按下方「源码运行」步骤操作。
+>
+> The v0.2 packages on the Releases page have a known issue: the "open URL" feature does not work on Windows. **Please do not download them.** The source code here is fixed — run it from source using the steps below.
+
+---
+
 <a id="中文文档"></a>
 
 macOS / Windows 简易网页搜索图形工具，基于 CustomTkinter 开发，一键调用百度、必应搜索，支持自定义网址直接打开。
@@ -22,6 +32,8 @@ macOS / Windows 简易网页搜索图形工具，基于 CustomTkinter 开发，�
 
 ## 发布资源 Assets 说明
 
+> **暂不建议下载** —— Windows 版存在已知问题，请改用下方「方式二：源码运行」。
+
 | 文件名称 | 适用平台 | 说明 |
 |--------|--------|------|
 | install_dependencies.sh | macOS | Mac 依赖安装脚本 |
@@ -33,6 +45,8 @@ macOS / Windows 简易网页搜索图形工具，基于 CustomTkinter 开发，�
 ## 使用教程
 
 ### 方式一：运行编译好的程序包
+
+> **暂不可用**：v0.2 安装包的 Windows 版本存在已知问题，请改用下方「方式二：源码运行」。
 
 1. 进入仓库 Releases 页面，下载对应平台的程序文件
 2. 运行对应程序：
@@ -92,6 +106,8 @@ A lightweight cross-platform web search GUI tool for macOS and Windows, built wi
 
 ## Release Assets
 
+> **Do not download these yet** — the Windows package has a known issue. Run from source instead.
+
 | File Name | Platform | Description |
 |--------|--------|------|
 | install_dependencies.sh | macOS | Mac dependency installation script |
@@ -103,6 +119,8 @@ A lightweight cross-platform web search GUI tool for macOS and Windows, built wi
 ## Usage Guide
 
 ### Method 1: Run the compiled package
+
+> **Currently unavailable**: the Windows build of v0.2 has a known issue. Use "Method 2: Run from source" below instead.
 
 1. Go to the repository Releases page and download the file for your platform
 2. Run the program:
