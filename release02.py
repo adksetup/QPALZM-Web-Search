@@ -1,18 +1,6 @@
-import webbrowser
-
 from customtkinter import CTk, CTkButton, CTkLabel, CTkEntry
 from termcolor import cprint
-
-
-def open_in_browser(url: str) -> None:
-    """Open a URL in the system default browser (macOS / Windows)."""
-    url = url.strip()
-    if not url:
-        return
-    if not url.startswith(('http://', 'https://')):
-        url = 'https://' + url
-    webbrowser.open(url)
-
+from subprocess import run
 
 class QpalzmWebSearch:
     def __init__(self, window: CTk) -> None:
@@ -35,17 +23,31 @@ class QpalzmWebSearch:
 
     def baidu_search_func(self):
         try:
-            keyword = self.search_entry.get().strip()
-            if keyword:
-                open_in_browser(f'https://www.baidu.com/s?wd={keyword}&ie=utf-8')
+            print('Select your operating system.')
+            print('1. MacOS')
+            print('2. Windows')
+            os_type1 = input('Enter: ')
+            if int(os_type1) == 1:
+                run(f'open https://www.baidu.com/s?wd={self.search_entry.get()}&ie=utf-8', shell=True)
+            elif int(os_type1) == 2:
+                run(f'start https://www.baidu.com/s?wd={self.search_entry.get()}&ie=utf-8', shell=True)
+            else:
+                cprint('Please enter a valid number.', 'red')
         except Exception as e:
             cprint(f'ERROR: {e}', 'red')
 
     def bing_search_func(self):
         try:
-            keyword = self.search_entry.get().strip()
-            if keyword:
-                open_in_browser(f'https://cn.bing.com/search?q={keyword}')
+            print('Select your operating system.')
+            print('1. MacOS')
+            print('2. Windows')
+            os_type2 = input('Enter: ')
+            if int(os_type2) == 1:
+                run(f'open https://cn.bing.com/search?q={self.search_entry.get()}', shell=True)
+            elif int(os_type2) == 2:
+                run(f'start https://cn.bing.com/search?q={self.search_entry.get()}', shell=True)
+            else:
+                cprint('Please enter a valid number.', 'red')
         except Exception as e:
             cprint(f'ERROR: {e}', 'red')
 
@@ -54,7 +56,7 @@ class QpalzmWebSearch:
             for widget in self.window.winfo_children():
                 widget.destroy()
             label1 = CTkLabel(self.window, text='请输入URL',
-                            font=('Helvetica bold', 26))
+                                font=('Helvetica bold', 26))
             label1.place(relx=0.5, rely=0.4, anchor='center')
             self.entry1 = CTkEntry(self.window, width=200, placeholder_text='输入URL链接...',
                                      corner_radius=5)
@@ -67,10 +69,9 @@ class QpalzmWebSearch:
 
     def enter_url_func(self):
         try:
-            open_in_browser(self.entry1.get())
+            run(f'open {self.entry1.get()}', shell=True)
         except Exception as e:
             cprint(f'ERROR: {e}', 'red')
-
 
 if __name__ == '__main__':
     app = CTk()
