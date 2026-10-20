@@ -69,16 +69,7 @@ class QpalzmWebSearch:
 
     def enter_url_func(self):
         try:
-            print('Select your operating system')
-            print('1. MacOS')
-            print('2. Windows')
-            os_type3 = input('Select: ')
-            if int(os_type3) == 1:
-                run(f'open {self.entry1.get()}', shell=True)
-            elif int(os_type3) == 2:
-                run(f'start {self.entry1.get()}', shell=True)
-            else:
-                cprint('Please enter a valid number.', 'red')
+            run(f'open {self.entry1.get()}', shell=True)
         except Exception as e:
             cprint(f'ERROR: {e}', 'red')
 
