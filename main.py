@@ -58,7 +58,7 @@ class QpalzmWebSearch:
             label1 = CTkLabel(self.window, text='请输入URL',
                                 font=('Helvetica bold', 26))
             label1.place(relx=0.5, rely=0.4, anchor='center')
-            self.entry1 = CTkEntry(self.window, width=200, placeholder_text='输入URL链接...',
+            self.entry1 = CTkEntry(self.window, width=200, placeholder_text='URL(需加http或https前缀)',
                                      corner_radius=5)
             self.entry1.place(relx=0.5, rely=0.6, anchor='center')
             enter_btn = CTkButton(self.window, text='打开网页',
@@ -69,7 +69,16 @@ class QpalzmWebSearch:
 
     def enter_url_func(self):
         try:
-            run(f'open {self.entry1.get()}', shell=True)
+            print('Select your operating system')
+            print('1. MacOS')
+            print('2. Windows')
+            os_type3 = input('Select: ')
+            if int(os_type3) == 1:
+                run(f'open {self.entry1.get()}', shell=True)
+            elif int(os_type3) == 2:
+                run(f'start {self.entry1.get()}', shell=True)
+            else:
+                cprint('Please enter a valid number.', 'red')
         except Exception as e:
             cprint(f'ERROR: {e}', 'red')
 
